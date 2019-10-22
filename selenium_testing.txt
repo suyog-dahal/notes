@@ -33,3 +33,19 @@ eg:
      Submit(): Webdriver will automatically trigger the submit function of the form where the element belongs to
 
  WebElement button =driver.findElement(By.class("classname")).click();
+3-> If you to test whether the output is right or wrong you use TestNG: TestNG is an open source automatedd testing framework, where NG means "Next Generation". It is a testing framework inspired from JUnit and NUnit, but introducing some new functionalities makes it more powerful and easier to use.
+
+#Features of TestNG:
+-> TestNG annotations are easy to create test cases.eg @Test
+-> Test cases can be grouped and prioritized more easily.
+-> It supports data-driven testing using DataProviders and generates HTML reports.
+-> Parallel test execution is possible.
+
+for testng annotations to work you must import org.testng.annotations.*;
+
+#Annotations in TestNG
+Some are:
+@BeforeSuite: the annotated method will be run only once before all tests in this suite have run.
+@BeforeTest: The annotated method will be run before any test method belonging to the classes inside the <test> tag is run. Example you might require to open the browser before the test should run etc.
+@BeforeClass: The annotated method will be run only once before the first test method in the current class in invoked.
+@BeforeMethod: it runs before every methods that is annotated as @test so if there are 5 methods than the before method annotated function will run for five times and @Test annotation is annotated before every testing methods(functions).
