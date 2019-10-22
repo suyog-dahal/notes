@@ -1,6 +1,7 @@
 %#Selenium:
 
 It is a portable framework for testing web applications. Selenium provides a playback tool for authoring functional tests without the need to learn a new test scripting language.
+
 4 components of selenium since selenium core could not suffice all the use cases of testing hence requires its components.
 1. Selenium RC
 -> Selenium core had a disadvantages of only being capable of testing the webapp in the local system so due to this selenium RC acted as a proxy server (i.e it takes the website and makes it look like website is located in the local system to the selenium core). Together with the selenium core it was known as Selenium 1.
@@ -18,7 +19,7 @@ selenium 2 and selenium3(new and improved) is the combination of selenium rc and
 
 Setting up Selenium with Maven: JAVA(JDK, eclipse EE version)
 
-Flow of creating an automated test:
+# Flow of creating an automated test:
 1-> find the element on the web browser on which it has to perform an operation
 2-> Perform an action on the found element(s)
 3-> Test and create a test report with the results.
@@ -49,3 +50,37 @@ Some are:
 @BeforeTest: The annotated method will be run before any test method belonging to the classes inside the <test> tag is run. Example you might require to open the browser before the test should run etc.
 @BeforeClass: The annotated method will be run only once before the first test method in the current class in invoked.
 @BeforeMethod: it runs before every methods that is annotated as @test so if there are 5 methods than the before method annotated function will run for five times and @Test annotation is annotated before every testing methods(functions).
+
+# example
+
+//import all required packages
+
+public class app{
+	//Initialize the object of webdriver package
+		Webdriver driver;
+
+	public void test(){
+
+	// Set system property to the path of the chromedriver.exe that is used to open chrome
+		System.setProperty("webdriver.chrome.driver","path to chrome.exe");
+	//initialize the object of the chromedriver	
+		driver = new Chromedriver();
+	//set the name of the site to which you want to run test cases against
+		driver.get("https://www.google.com")
+	//set of instruction to test cases
+		driver.findElement(By.class("classname")).actions();{such as click();}
+	//you can also use test driven method here
+		String actualTitle = "This is a test";
+		String ActualValue = driver.findElement(By.Class(classname));
+		Assert.assertEquals(ActualValue, actualTitle);
+
+	}
+}
+
+# Running a Headless Test in Selenium
+It is usable in the system where you cannot open the browsers such as in a commandline operating system. The test is being carried out in the background without opening a browser.
+
+syntax of headless mode 
+ChromeOptions options = new ChromeOptions();
+options.addArguments("headless");
+driver = new ChromeDriver(options);
