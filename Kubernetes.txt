@@ -1,0 +1,24 @@
+# starting with kubernetes
+
+# Why do we need it??
+ -> To handle Microservices Architecture where all the modules are separate and communicate with eachother using JSON. 
+ -> each of the modules and services are handled by each servers thus creating the distributed architecture.
+ -> but the second point caused the problem of servers being under-utilized so to solve this problem we came up with the solution of containerizing the modules using docker containers.
+ -> Due to containerization all the modules could run in one server also scaling and descaling was easy since you could add the container of the module that is using the most CPU or memory so that the load could be separated to two containers.
+ -> Scaling a Particular service based on load is not possible.Manual intervention required. so orchestration tool comes to play.
+ -> But the monitoring of the container was not easy so this orchestration of the container was a pain so this is where kubernetes(or other orchestration tool also such as docker swarm) comes into play.
+
+So "KUBERNETES" is a container orchestration tool that is used when our application is distributed in multiple containers. So, It's job is to monitor, scale, restart containers automatically even if they are spread across multiple nodes.
+
+# Features of Kubernetes
+ -> Managing Multiple Containers as one entity
+ -> Resource usage monitoring
+ -> Networking
+ -> Health Checks
+ -> Rolling Update
+ -> Load Balancing
+
+# How kube works?
+
+-> Master Node Architecture where master does the job of monitoring and node handles processing handles api etc.
+ -> KUBE ARCHITECTURE
