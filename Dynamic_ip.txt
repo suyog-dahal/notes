@@ -1,0 +1,13 @@
+Why the ISP's provide dynamic public ip to it's regular users??
+
+-> Dynamic public ip changes often. There are various reasons as to why the isp's provide dynamic ip to its users.
+ 1. It is cheap since you don't have to pay certain amount for acquiring a static ip.
+ 2. You have to manually maintain your ip's subnets for static ip's.
+ 3. You are more prone to attacks since the static ip's are easy to find.
+ 4. Every time your system is broken you have to manually configure your ip.
+ 5. Static IP are allocated to a single user so if the user's not using a ip then it is in idle state. So with the help of the dynamic ip address the same ip can be allocated to another person if the person is not using it.
+ 6. If all the people were assigned to a static ip address than we would already be out of the static ip addresses. 
+ 
+-> but with static ip's you can remotely access your devices out of your home network. All the servers use static ip because the server's ip frequent change affects the server. If by any chance your servers are using a dynamic ip then every time someone wants to access your server they have to look up for the new ip address which is far from convienience. If the servers are using dynamic ip address then the only possible solution to access that server is by using dynamic dns which constantly matches its changing ip address with the domain name assigned to that ip address. 
+
+-> for one to gain static ip the person has to upgrade to the business client.

@@ -1,0 +1,43 @@
+LDAP(open, vendor-neutral) stands for lightweight Directory Access Protocol. For example LDAP is like "what HTTP is to apache webserver" to active directories. That is apache
+webserver is a server that uses HTTP. Active directories are largely used for authentication and
+authorization and contains the authentications of users in a network. So the key to the information
+gain for the hackers lies in the active directories.
+
+A common use of LDAP is to provide a central place to store a usernames and passwords.This allows many different 
+different applications and services to connect to the LDAP server to validate users.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+NOTE
+
+Active Directory is a directory service for use in a Windows Server environment.It is a distributed hierarchial database structure that
+shares infrastructure information for locating, securing, managing and organizing computer and network resources including files,
+users, groups, peripherals and network devices.
+
+Active directory is microsofts own directory service for use in Windows domain networks.The directory itself is a LDAP database
+that contains networked objects.
+
+LDAP is a lightweight protocol for accessing directory services, and runs over TCP/IP or other
+connection oriented transfer services.
+
+LDAP VS AD
+
+Active directory is a database based system that provides authentication, directory, policy and other services in a windows 
+environment
+LDAP is an application protocol for querying and modifying items in directory service providers liks AD which supports a form
+of LDAP
+LDAP is standard, AD is proprietary
+in short AD is a directory services database, and LDAP is one of the protocols you can use to talk to it.
+-------------------------------------------------------------------------------------------------------------------------------------------
+What kind of information can be stored in the LDAP server directory?
+-> The LDAP information model is based on entries.
+-> An entry is a collection of attributes that has a globally unique Distinguished name(DN).
+-> DN is used to refer to the entry unambiguously.
+-> Each of the entry's attributes has a type and one or more values.
+-> The types are typically  mnemonic strings, like "cn" for common name, or "mail" for email address.
+-> The syntax of values depend on the attribute type for ex a cn might contain value suyog dahal, mail
+   attribute might contain the value "suyogdahal@cyberdiscuss.com" and a jpegPhoto attribute would
+   contain a photograph in the JPEG (binary) format.
+
+How is the information arranged?
+-> In LDAP, directory entries are arranged in a hierarchial tree like structure.
+->  

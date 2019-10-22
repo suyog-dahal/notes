@@ -1,0 +1,35 @@
+%#Selenium:
+
+It is a portable framework for testing web applications. Selenium provides a playback tool for authoring functional tests without the need to learn a new test scripting language.
+4 components of selenium since selenium core could not suffice all the use cases of testing hence requires its components.
+1. Selenium RC
+-> Selenium core had a disadvantages of only being capable of testing the webapp in the local system so due to this selenium RC acted as a proxy server (i.e it takes the website and makes it look like website is located in the local system to the selenium core). Together with the selenium core it was known as Selenium 1.
+
+2. Selenium IDE
+-> to decrease the time of testing
+
+3. selenium grid:
+-> it could help test multiple part of site in multiple system. It enables parallel testing of applications on multiple machines.
+
+4. Selenium webdriver:
+-> Selenium webdriver was the first cross platform testing framework that could control the browser from the OS level.It controls the browser by directly communicates with the browser.
+
+selenium 2 and selenium3(new and improved) is the combination of selenium rc and webdriver.
+
+Setting up Selenium with Maven: JAVA(JDK, eclipse EE version)
+
+Flow of creating an automated test:
+1-> find the element on the web browser on which it has to perform an operation
+2-> Perform an action on the found element(s)
+3-> Test and create a test report with the results.
+eg:
+
+1->The elements can be found by its properties or selectors such as id,Name,ClassName,TagName, Link Text, xpath(needs extension such as chropath which is for chrome) etc.
+   |-> WebElement button = driver.findElement(By.class("classname")); 
+2->Performing an action examples:
+ \-> click(): Used to click on the link and wait for page load to complete before proceeding to next command,
+     sendKeys(): Used to enter the values onto the text boxes,
+     Clear(): Used to clear text boxes of its current value,
+     Submit(): Webdriver will automatically trigger the submit function of the form where the element belongs to
+
+ WebElement button =driver.findElement(By.class("classname")).click();

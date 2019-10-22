@@ -1,0 +1,59 @@
+VPC : Virtual Private Cloud. 
+//-> basic Concept
+
+The regular platform that you take from aws, azure or other platform uses a public cloud. You are sharing the cloud features with other company's as well. So the company such as aws uses a concept called Virtual private cloud. It is a virtual data center and you get the full control upon its resources the components everything. you get the full control and flexibility and provides enhanced facility since you have complete control over the network components of your cloud. In top of that you can customize the cloud.
+- flexibility
+- full control upon its resources{Network components}
+- enhanced security
+- it is isolated from other VPC's
+- virtual datacenter
+
+-> components that you get full access on are:
+- You can specify IP Addresses. Besides public and private ip addresses there's elastic ip address in AWS.
+- You can define the subnets. Public and Private
+- You can customize your route tables.
+- You can define the internet gateway.
+- You can define and specify NACL: Network access control list.
+- You can define Virtual Private Gateway/ Customer gateway.
+- NAT Device. Gateway and Instance.
+
+#component number 1: Ip Addresses.
+- Private ip ranges: 10.x.x.x, 172.16.x.x-172.31.x.x, 192.168.x.x
+- Public ip ranges: all except Private ip ranges and loopback Ip address such as 127.x.x.x(eg localhost ip etc)
+- Public IP's are allocated by AWS or ISP. Aws has a features where you can bring your IP's(if you have one that you purchased from your ISP's) and use that IP.
+- Downside of Public IP is that it is not static in nature(i.e. it is dynamic).
+- In AWS the DNS service that we use is called " Route 53 " service.
+- Public ip's are controlled by aws which are dynamic public ip(in AWS).So every time you stop and start the server in aws the public ip changes.
+So with this everytime your public ip changes you have to change the dns entries to that ip address. So to solve that particular problem aws has a concept of "Elastic IP's"
+ 
+-> Elastic Ip's: Same as public ip that is used to expose your instance to the internet. They are used for external communcation. But they are static in nature and are controlled by the customer. (IMPORTANT->)"They are account specific IP's that depends with your account directly not with the Instances". GO TO Instance-> on left bar In Network setting you get Elastic IP and associate it.
+
+-> Downside or limitation of use Elastic IP's
+ 1. You get 5 elastic IP's per Region(maximum limit). Applicable to any account type.
+ 2. Elastic Ip's terms and condition(free but with certain conditions): It cannot be associated to idle instances or stopped instance if you do until limited hours aws starts charging you.
+
+#Component number 2:
+     Subnet:
+Two types of subnet:
+	1. Public subnet : consists of public resources that must be exposed to internet example web servers
+        2. Private subnet: consists of private resources that must be separated from internet and infrastructures.
+#Component number 3:
+   Internet Gateway:
+One Internet gateway to one VPC is enough.
+
+#Component number 4: NAT(Network address Translation) Device 
+ - It's main purpose is: Helps the instances in the private subnet to download the patches / updates.
+ - Launched in the public subnet
+ - Associate an Elastic ip to it.
+ - The NAT device is setup in Public subnet in VPC and the through the route table the Database in Private subnet of VPC communicates with Nat in public subnet so that the ip of private subnet is concealled by the public subnets Elastic Ip thus securing the Database server and connecting the private subnet to the internet. So when the request ip from the private ip is changed to the elastic ip and when the response ip hits the nat device it converts the elastic ip to the ip of the private subnet. So NAT like in typical networking is the network address translation function that translates the ip addresses.
+
+2 NAT device types:
+1. NAT instances: Not Preferred, EC2 instance, less stable, requires a lot of configuration, not capable of high bandwidth requirements, managed by customers, less redundant.
+2. NAT gateway: Preferred, Virtual gatetway, highly stable and available, requires less administration efforts, capable of high bandwidth requirements, managed service(i.e failover, redundancy etc are managed by aws) by aws, more redundant.
+
+# Two types of VPC's:
+1. Default VPC: It is managed by aws.Every time you create a new instance the default VPC is triggered automatically. 
+ - Downsides:
+ 	Every subnet is public(lesser security).
+2. Non Default VPC(also called custom/regular): Created and managed by customer
+
