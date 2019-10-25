@@ -1,0 +1,36 @@
+# What is .htaccess?
+-> htaccess is a configuration file for use on web servers running the apache web server software.
+-> When a .htaccess file is placed in a directory which is in turn loaded via the apache web server, then the .htaccess file
+is detected and executed by the apache web server software.
+->These files can be used to alter the configuration of the apache web server software to enable disable additional functionality and 
+features that the apache server software has to offer.
+-> These facilities include basic redirect functionality, for instance if a 404 file not found error occurs, or for more advanced functions
+such as content password protection or image hot link prevention.
+
+# How to use .htaccess?
+-> Takes effect in any directory which is loaded via the apache web server software.
+-> Takes effect in the entire directory in which htaccess is placed and to its sub directories aswell.
+
+# Showing Error Documents
+-> Creating a custom error  pages is very useful, it allows you to show website visitors a friendly error message. Eg avoiding unfriendly
+404 file not found error and displaying a custom error.
+-> to setup a custom error documents, create a htaccess file following the main instructions and guidance which includes the following
+text:
+	ErrorDocument 404/error_pages/404.html
+-> The above line tells the apache web server to display the document located at /error_pages/404.html(under the domain name/website add)
+whenever 404 error occurs.
+-> you have to create these error document and call it 404.html and that you have placed it in a directory called 'error_pages'.
+ you can create multiple errors | 
+	ErrorDocument 401/error_pages/401.html
+	ErrorDocument 500/error_pages/500.html
+-> It's all very well displaying a friendly error message, but more importantly you need to resolve the error. By using a CGI script instead of a static HTML document as the error document allows us to record errors in a database, and resolve them.
+
+# Redirects
+-> Redirects enable us to direct website visitors from one document within your website to another. This is useful for example, if you have
+moved your website content and would like to redirect visitors from old links to the new content location.
+-> To set-up redirects, create a .htaccess file following the main instructions.
+	Redirect /old_dir/ http://www.yourdomain.com/new_dir/index.html
+-> It is very important (and the most common cause of error) that you understand the difference between a relative URL and an absolute/full URL. A relative URL is the location of the document within the web site, and does not include the actual domain name of the web site. These are used for documents held within the web site to simplify and shorten the URL.
+
+# Password Protection
+->
