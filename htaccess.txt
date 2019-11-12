@@ -32,5 +32,9 @@ moved your website content and would like to redirect visitors from old links to
 	Redirect /old_dir/ http://www.yourdomain.com/new_dir/index.html
 -> It is very important (and the most common cause of error) that you understand the difference between a relative URL and an absolute/full URL. A relative URL is the location of the document within the web site, and does not include the actual domain name of the web site. These are used for documents held within the web site to simplify and shorten the URL.
 
+#link to mod_rewrite and Regular Expression tutorial https://www.webmasterworld.com/forum92/4332.htm
+#Note RewriteRule tells the server to interpret the following information as a rule.
+-> RewriteCond tells the server to interpret the following information as a condition of the rule(s) that immediately after it.
+
 # Password Protection
 ->
