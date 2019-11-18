@@ -1,0 +1,20 @@
+# Information Security 
+
+-> CIA - Confidentiality, Integrity and Availability
+1. Confidentiality: Confidentiality refers to protecting privacy be it people's or companies.
+2. Integrity: Process of protecting the data from any unauthorized changes.
+3. Availability: Process of making data Available.
+-> Example of Availability:
+ Suppose we got a company ABC with one client OH. The company's got a site and a hacker named sitegrimer attacks the company's
+ server with DOS. Now the site is down and OH is not able to open the site and get the service of the company. So the availabil-
+ ity of the data of the company is down since Denial of Service attack decreases the availability of the services to its victim.
+ 
+ Beside the triumvarite(group of three) CIA there are many more security concerns such as authorization
+-> Example of Authorization:
+ The users of the software must be able to view own profile but not of other users. The manager must be able to watch the of the 
+ employees profile. Thus the process of maintaining these hierarchies is known as authorization. Authorization deals with restric-
+tions placed on the authenticated users. Once the user is verified as a user, the manager must enforce restrictions on user's actions.
+The two classic methods for enforcing such restrictions are so called access control lists(ACL) and capabilities.
+
+# Cryptography
+
