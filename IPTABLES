@@ -1,0 +1,17 @@
+It is a host based firewall called Netfilter or IPTABLES.
+Netfilter filtering takes place at the kernel level, before a program can even process the data from the network packet.
+
+IPtables configuration File location: /etc/sysconfig/iptables
+
+CHAINS:
+INPUT: The default chain is used for packets addressed to the system. We use this to open or close incoming ports and ip addresses/subnet.
+OUTPUT: The default chain is used when packets are generating from the system. We use this to open and close outgoing ports and ip addresses/subnets.
+FORWARD: The default chain is used when packets send through another interface. Usually used when you setup LINUX as a router. For example, eth0 connected
+ADSL/Cable modem abd eth1 is connected to Local LAN. Use FORWARD chain to send and recieve traffic from LAN to Internet.
+RH-Firewall-1-INPUT: This is a user-defined custom chain. It is used by the INPUT, OUTPUT and FORWARD chains.
+
+Packet Matching Rules within a CHAIN
+1. Each Packet starts at the first rule in the chain.
+2. A packet proceeds until it matches a rule.
+3. If a match is found, then control will jump to the specified target (such as REJECT, ACCEPT or DROP)
+
